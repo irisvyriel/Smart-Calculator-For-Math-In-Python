@@ -3,7 +3,7 @@ from math import *
 
 class Shape:
 
-# Bangun Datar and Bangun Ruang
+# Bangun Datar 
     def __init__(self, shape_type, **kwargs):
         self.shape_type = shape_type
 
@@ -30,8 +30,9 @@ class Shape:
         elif self.shape_type == "parallelogram":
             self.height = kwargs["height"]
             self.pedestal = kwargs["pedestal"]
-    
+
     def calculate_area(self) -> int:
+        # Calculate Area
         if self.shape_type == "rectangle":
             return self.width * self.height
         
@@ -53,7 +54,7 @@ class Shape:
         
 class GeometryArea:
 
-
+# Bangun Ruang
     def __init__(self, geometry_type_area, **kwargs):
         self.geometry_type_area = geometry_type_area
 
@@ -97,6 +98,7 @@ class GeometryArea:
             self.radius2 = kwargs["radius2"]
 
     def calculate_area(self) -> int:
+        # Calculate Area
         if self.geometry_type_area == "cube":
             return 6 * self.lateral1 * self.lateral2
         
@@ -165,4 +167,28 @@ class GeometryVolume:
             self.radius2 = kwargs["radius2"]
             self.radius3 = kwargs["radius3"]
         
-    
+    def calculate_volume(self) -> int:
+        # Calculate Volume
+        if self.geometry_type_volume == "cube":
+            return self.lateral1 * self.lateral2 * self.lateral3
+        
+        elif self.geometry_type_volume == "block":
+            return self.lenght * self.width * self.height
+        
+        elif self.geometry_type_volume == "rectangular_pyramid":
+            return (self.pedestal * self.height) / 3
+        
+        elif self.geometry_type_volume == "triangular_prism":
+            return (self.pedestal * self.height * self.Height) / 2
+        
+        elif self.geometry_type_volume == "triangular_pyramid":
+            return (self.pedestal * self.height * self.Height) / 6
+        
+        elif self.geometry_type_volume == "tube":
+            return pi * self.radius1 * self.radius2 * self.height
+        
+        elif self.geometry_type_volume == "cone":
+            return (pi * self.radius1 * self.radius2 * self.height) / 3
+        
+        elif self.geometry_type_volume == "sphere":
+            return (pi * self.radius1 * self.radius2 * self.radius3 * 4) / 3 
