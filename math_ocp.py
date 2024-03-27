@@ -1,7 +1,7 @@
 from math import *
 
 
-class Shape:
+class ShapeArea:
 
 # Bangun Datar 
     def __init__(self, shape_type, **kwargs):
@@ -50,8 +50,64 @@ class Shape:
         
         elif self.shape_type == "parallelogram":
             return self.pedestal * self.height 
+
+class ShapeParameter:
+
+
+    def __init__(self, shape_volume, **kwargs):
+        self.shape_volume = shape_volume
+
+        if self.shape_volume == "rectangle":
+            self.width = kwargs["width"]
+            self.height = kwargs["height"]
         
+        elif self.shape_volume == "circle":
+            self.radius = kwargs["radius"]
         
+        elif self.shape_volume == "triangle":
+            self.pedestal1 = kwargs["pedestal1"]
+            self.pedestal2 = kwargs["pedestal2"]
+            self.pedestal3 = kwargs["pedestal3"]
+        
+        elif self.shape_volume == "trapezium":
+            self.pedestal1 = kwargs["pedestal1"]
+            self.pedestal2 = kwargs["pedestal2"]
+            self.pedestal3 = kwargs["pedestal3"]
+            self.pedestal4 = kwargs["pedestal4"]
+        
+        elif self.shape_volume == "Rhombus":
+            self.pedestal1 = kwargs["pedestal1"]
+            self.pedestal2 = kwargs["pedestal2"]
+            self.pedestal3 = kwargs["pedestal3"]
+            self.pedestal4 = kwargs["pedestal4"]
+        
+        elif self.shape_volume == "parallelogram":
+            self.pedestal1 = kwargs["pedestal1"]
+            self.pedestal2 = kwargs["pedestal2"]
+            self.pedestal3 = kwargs["pedestal3"]
+            self.pedestal4 = kwargs["pedestal4"]
+    
+    def calculate_perimeter(self) -> int:
+        # Calculate Perimeter
+        if self.shape_volume == "rectangle":
+            return (2 * self.height) + (2 * self.width)
+        
+        elif self.shape_volume == "circle":
+            return pi * 2 * self.radius
+        
+        elif self.shape_volume == "triangle":
+            return self.pedestal1 + self.pedestal2 + self.pedestal3
+        
+        elif self.shape_volume == "trapezium":
+            return self.pedestal1 + self.pedestal2 + self.pedestal3 + self.pedestal4
+        
+        elif self.shape_volume == "Rhombus":
+            return self.pedestal1 + self.pedestal2 + self.pedestal3 + self.pedestal4
+        
+        elif self.shape_volume == "parallelogram":
+            return self.pedestal1 + self.pedestal2 + self.pedestal3 + self.pedestal4
+
+
 class GeometryArea:
 
 # Bangun Ruang

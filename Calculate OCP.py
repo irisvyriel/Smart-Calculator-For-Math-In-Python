@@ -30,8 +30,12 @@ class SmartCalculator:
                                         "Your Answer = "))
                 
                 if user_input3 == "1":
-                    rectangle = Shape("rectangle", width=int(input("Width = ")), height=int(input("Height = ")))
+                    rectangle = ShapeArea("rectangle", width=int(input("Width = ")), height=int(input("Height = ")))
                     print("Your Rectangle Calculate is = ", rectangle.calculate_area())
+                
+                elif user_input3 == "2":
+                    rectangle = ShapeParameter("rectangle", height = int(input("Height = ")), width = int(input("Width = ")))
+                    print("Your Rectangle Calculate is = ", rectangle.calculate_perimeter())
 
                 else:
                     print("You're Wrong")
@@ -46,8 +50,12 @@ class SmartCalculator:
                 user_input3 = str(input("What Do you wanna choose?" "\n"
                                         "Your Answer = "))
                 if user_input3 == "1":
-                    circle = Shape("circle", radius=float(input("Radius = ")))
+                    circle = ShapeArea("circle", radius=float(input("Radius = ")))
                     print("Your Circle Calculate is = ", circle.calculate_area())
+                
+                elif user_input3 == "2":
+                    circle = ShapeParameter("circle", radius = int(input("Radius = ")))
+                    print("Your Circle Calculate is = ", circle.calculate_perimeter())
 
                 else:
                     print("You're Wrong")
@@ -64,8 +72,13 @@ class SmartCalculator:
                                         "Your Answer = "))
                 
                 if user_input3 == "1":
-                    triangle = Shape("triangle", pedestal=int(input("Pedestal = ")), height=int(input("Height = ")))
+                    triangle = ShapeArea("triangle", pedestal=int(input("Pedestal = ")), height=int(input("Height = ")))
                     print("Your Triangle Calculate is = ", int(triangle.calculate_area()))
+                
+                elif user_input3 == "2":
+                    triangle = ShapeParameter("triangle", pedestal1 = int(input("Pedestal 1 = ")), pedestal2 = int(input("Pedestal 2 = ")), pedestal3 = int(input("Pedestal 3 = ")))
+                    print("Your Triangle Calculate is = ", triangle.calculate_perimeter())
+
                 else:
                     print("You're Wrong")
                     print("Please Try It Again")
@@ -80,8 +93,13 @@ class SmartCalculator:
                                         "Your Answer = "))
                 
                 if user_input3 == "1":
-                    trapezium = Shape("trapezium", pedestal=int(input("Pedestal = ")), base=int(input("Base = ")), height=int(input("Height = ")))
+                    trapezium = ShapeArea("trapezium", pedestal=int(input("Pedestal = ")), base=int(input("Base = ")), height=int(input("Height = ")))
                     print("Your Trapezium Calculate is = ", int(trapezium.calculate_area()))
+                
+                elif user_input3 == "2":
+                    trapezium = ShapeParameter("trapezium", pedestal1 = int(input("Pedestal 1 = ")), pedestal2 = int(input("Pedestal 2 = ")), 
+                                               pedestal3 = int(input("Pedestal 3 = ")), pedestal4 = int(input("Pedestal 4 = ")))
+                    print("Your Trapezium Calculate is = ", trapezium.calculate_perimeter())
 
                 else:
                     print("You're Wrong")
@@ -97,8 +115,12 @@ class SmartCalculator:
                                         "Your Answer = "))
                 
                 if user_input3 == "1":
-                    Rhombus = Shape("Rhombus", diagonal1 = int(input("Diagonal 1 = ")), diagonal2 = int(input("Diagonal 2 = ")))
+                    Rhombus = ShapeArea("Rhombus", diagonal1 = int(input("Diagonal 1 = ")), diagonal2 = int(input("Diagonal 2 = ")))
                     print("Your Rhombus Calculate is = ", int(Rhombus.calculate_area()))
+                
+                elif user_input3 == "2":
+                    Rhombus = ShapeParameter("Rhombus", pedestal1 = int(input("Pedestal 1 = ")), pedestal2 = int(input("Pedestal 2 = ")), 
+                                             pedestal3 = int(input("Pedestal 3 = ")), pedestal4 = int(input("Pedestal 4 = ")))
 
                 else:
                     print("You're Wrong")
@@ -114,8 +136,12 @@ class SmartCalculator:
                                         "Your Answer = "))
                 
                 if user_input3 == "1":
-                    parallelogram = Shape("parallelogram", pedestal = int(input("Pedestal = ")), height = int(input("Height = ")))
+                    parallelogram = ShapeArea("parallelogram", pedestal = int(input("Pedestal = ")), height = int(input("Height = ")))
                     print("Your Parallelogram Calculate is = ", int(parallelogram.calculate_area()))
+                
+                elif user_input3 == "2":
+                    parallelogram = ShapeParameter("parallelogram", pedestal1 = int(input("Pedestal 1 = ")), pedestal2 = int(input("Pedestal 2 = ")), 
+                                                   pedestal3 = int(input("Pedestal 3 = ")), pedestal4 = int(input("Pedestal 4 = ")))
                 
                 else:
                     print("You're Wrong")
@@ -219,27 +245,87 @@ class SmartCalculator:
                     print("Please Try It Again")
             
             elif user_input2 == "5":
-
-                Triangular_pyramid = GeometryArea("triangular_pyramid", side_area1 = int(input("Side Area 1 = ")), 
-                                               side_area2 = int(input("Side Area 2 = ")), side_area3 = int(input("Side Area 3 = ")),
-                                               side_area4 = int(input("Side Area 4 = ")))
-                print("Your Triangular Pyramid Calculate is = ", Triangular_pyramid.calculate_area())
-            
+                print("Which Part do you want to count")
+                print("1. Area" "\n"
+                      "2. Volume")
+                
+                user_input4 = str(input("What Do you wanna choose?" "\n"
+                                        "Your Answer = "))
+                
+                if user_input4 == "1":
+                    Triangular_pyramid = GeometryArea("triangular_pyramid", side_area1 = int(input("Side Area 1 = ")), 
+                                                side_area2 = int(input("Side Area 2 = ")), side_area3 = int(input("Side Area 3 = ")),
+                                                side_area4 = int(input("Side Area 4 = ")))
+                    print("Your Triangular Pyramid Calculate is = ", Triangular_pyramid.calculate_area())
+                
+                elif user_input4 == "2":
+                    Triangular_pyramid = GeometryVolume("triangular_pyramid", pedestal = int(input("Pedestal")), height = int(input("height = ")), Height = int(input("Height = ")))
+                    print("Your Triangular Pyramid Calculate is = ", Triangular_pyramid.calculate_volume())
+                
+                else:
+                    print("You're Wrong")
+                    print("Please Try it Again")
+                
             elif user_input2 == "6":
-
-                Tube = GeometryArea("tube", radius = int(input("Radius = ")), height = int(input("Height = ")))
-                print("Your Tube Calculate is = ", Tube.calculate_area())
+                print("Which Part do you want to count")
+                print("1. Area" "\n"
+                      "2. Volume")
+                
+                user_input4 = str(input("What Do you wanna choose?" "\n"
+                                        "Your Answer = "))
+                
+                if user_input4 == "1":
+                    Tube = GeometryArea("tube", radius = int(input("Radius = ")), height = int(input("Height = ")))
+                    print("Your Tube Calculate is = ", Tube.calculate_area())
+                
+                elif user_input4 == "2":
+                    Tube = GeometryVolume("tube", radius1 = int(input("Radius 1 = ")), radius2 = int(input("Radius 2 = ")), height = int(input("height = ")))
+                    print("Your Tube Calculate is = ", Tube.calculate_volume())
+                
+                else:
+                    print("You're Wrong")
+                    print("Please Try it Again")
             
             elif user_input2 == "7":
-
-                Cone = GeometryArea("cone", radius = int(input("Radius = ")), side = int(input("Side = ")))
-                print("Your Cone Calculate is = ", Cone.calculate_area())
+                print("Which Part do you want to count")
+                print("1. Area" "\n"
+                      "2. Volume")
+                
+                user_input4 = str(input("What Do you wanna choose?" "\n"
+                                        "Your Answer = "))
+                
+                if user_input4 == "1":
+                    Cone = GeometryArea("cone", radius = int(input("Radius = ")), side = int(input("Side = ")))
+                    print("Your Cone Calculate is = ", Cone.calculate_area())
+                
+                elif user_input4 == "2":
+                    Cone = GeometryVolume("cone", radius1 = int(input("Radius 1 = ")), radius2 = int(input("Radius 2 = ")), height = int(input("Height = ")))
+                    print("Your Cone Calculate is = ", Cone.calculate_volume())
+                
+                else:
+                    print("You're Wrong")
+                    print("Please Try it Again")
             
             elif user_input2 == "8":
+                print("Which Part do you want to count")
+                print("1. Area" "\n"
+                      "2. Volume")
+                
+                user_input4 = str(input("What Do you wanna choose?" "\n"
+                                        "Your Answer = "))
+                
+                if user_input4 == "1":
+                    Sphere = GeometryArea("sphere", radius1 = int(input("Radius 1 = ")), radius2 = int(input("Radius 2 = ")))
+                    print("Your Sphere Calculate is = ", Sphere.calculate_area())
+                
+                elif user_input4 == "2":
+                    Sphere = GeometryVolume("sphere", radius1 = int(input("Radius 1 = ")), radius2 = int(input("Radius 2 = ")), radius3 = int(input("Radius 3 = ")))
+                    print("Your Sphere Calculate is = ", Sphere.calculate_volume())
 
-                Sphere = GeometryArea("sphere", radius1 = int(input("Radius 1 = ")), radius2 = int(input("Radius 2 = ")))
-                print("Your Sphere Calculate is = ", Sphere.calculate_area())
-        
+                else:
+                    print("You're Wrong")
+                    print("Please Try it Again")    
+
         else:
             print("There Is not Option")
 
